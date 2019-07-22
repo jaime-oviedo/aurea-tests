@@ -46,9 +46,12 @@ pipeline{
 		}
 		stage("Static code analysis"){
 			steps{
-			    echo("style checks")
-			    echo("coding checks")
-			    echo("static security checks")
+				sh "./gradlew checkstyleMain"
+				publishHTML (target: [
+     				reportDir: 'build/reports/checkstyle/',
+     				reportFiles: 'main.html',
+     				reportName: "Checkstyle Report"
+				])
 			}
 		}
 		stage("Package"){

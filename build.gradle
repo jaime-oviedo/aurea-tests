@@ -4,7 +4,8 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
-apply plugin: "jacoco"
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 
 jacocoTestCoverageVerification { 
 	violationRules{
@@ -15,6 +16,11 @@ jacocoTestCoverageVerification {
 		}
 	}
 }
+
+checkstyle { 
+	checkstyleTest.enabled = false
+}
+
 
 
 group = 'com.aurea'
