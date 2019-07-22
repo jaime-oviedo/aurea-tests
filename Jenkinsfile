@@ -25,7 +25,7 @@ pipeline{
     	}
         stage("Compile"){
 			steps{
-				echo("sh './gradlew compileJava' or simmilar")			    
+				sh "./gradlew compileJava"			    
 			}
 		}
 		stage("Unit tests"){

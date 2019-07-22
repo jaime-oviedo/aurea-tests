@@ -4,6 +4,18 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: "jacoco"
+
+jacocoTestCoverageVerification { 
+	violationRules{
+		rule {
+			limit {
+				minimum = 0.2
+			}
+		}
+	}
+}
+
 
 group = 'com.aurea'
 version = '0.0.1-SNAPSHOT'
