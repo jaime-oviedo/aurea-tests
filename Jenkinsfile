@@ -56,7 +56,7 @@ pipeline{
 		}
 		stage("Package"){
 			steps{
-			    echo("Generate binaries for Nexus and for creating the docker image")		    
+			    sh "./gradlew build"		    
 			}
 		}
 		stage("Nexus push"){
@@ -66,7 +66,7 @@ pipeline{
 		}
 		stage("Docker build"){
 			steps{
-		        echo("Generate docker image")
+		        sh "docker build -t joviedo/calculator ."
 			}
 		}
 		stage("Docker push"){
