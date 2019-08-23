@@ -1,37 +1,4 @@
-base:
+calculator:
   image: 10.100.198.200:5000/aurea-calculator
   ports:
     - 8080
-  environment:
-    - SERVICE_NAME=aurea-calculator
-
-app:
-  extends:
-    service: base
-  links:
-    - db:db
-
-app-blue:
-  extends:
-    service: base
-  environment:
-    - SERVICE_NAME=aurea-calculator-blue
-  links:
-    - db:db
-
-app-green:
-  extends:
-    service: base
-  environment:
-    - SERVICE_NAME=aurea-calculator-green
-  links:
-    - db:db
-
-applocal:
-  extends:
-    service: base
-  links:
-    - db:db
-
-db:
-  image: mongo
