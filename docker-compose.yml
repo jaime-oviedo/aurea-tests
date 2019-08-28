@@ -1,4 +1,4 @@
 calculator:
-  image: registry:5000/aurea-calculator
+  image: registry:5000/aurea-calculator:v1
   ports:
     - 8080
